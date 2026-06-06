@@ -2,13 +2,11 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../auth/AuthContext';
-import { login as loginRequest } from '../auth/authApi';
+import { login as loginRequest } from '../auth/AuthApi';
 import { ApiError } from '../api/client';
 
-const ESCUDO_URL = '/assets/logos/escudo.webp';
-const LOGO_URL   = '/assets/logos/logo-ayuntamiento.png';
 
-export default function IntranetLogin() {
+export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -48,11 +46,11 @@ export default function IntranetLogin() {
         <div className="pointer-events-none absolute inset-0 opacity-[0.08]"
           style={{ backgroundImage: 'radial-gradient(circle, white 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
 
-        <img src={ESCUDO_URL} alt="" aria-hidden="true"
+        <img src="/escudo.png" alt="" aria-hidden="true"
           className="pointer-events-none absolute -right-10 bottom-0 h-3/4 w-auto object-contain opacity-[0.07]" />
 
         <div className="relative">
-          <img src={LOGO_URL} alt="H. Ayuntamiento de Zongolica" className="h-10 object-contain brightness-0 invert" />
+          <img src="/imagotipo.png" alt="Crud de Gestion de Inventarios Logo" className="h-10 object-contain brightness-0 invert" />
         </div>
 
         <div className="relative">
@@ -77,7 +75,7 @@ export default function IntranetLogin() {
       <div className="flex w-full flex-col items-center justify-center bg-[#f8f9fb] px-6 py-12 lg:w-1/2">
 
         <div className="mb-8 flex flex-col items-center gap-3 lg:hidden">
-          <img src={LOGO_URL} alt="H. Ayuntamiento de Zongolica" className="h-10 object-contain" />
+          <img src="/imagotipo.png" alt="Crud de Gestion de Inventarios Logo" className="h-10 object-contain" />
           <div className="h-px w-12 bg-[#ff8200]/40" />
           <div className="text-center">
             <p className="text-[10px] font-black uppercase tracking-[0.35em] text-slate-400">CRUD DE GESTION DE INVENTARIOS</p>

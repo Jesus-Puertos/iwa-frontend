@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './auth/AuthContext';
-import IntranetPageLayout from './components/LayoutCrud';
+import LayoutCrud from './components/LayoutCrud';
+import Login from './components/Login';
 
 // Guard: si no hay sesión, manda a login
 function RequireAuth({ children }: { children: React.ReactNode }) {
@@ -13,13 +14,13 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<div>Login (pendiente)</div>} />
+          <Route path="/login" element={<Login />} />
 
           {/* Rutas protegidas que usan el layout */}
           <Route
             element={
               <RequireAuth>
-                <IntranetPageLayout />
+                <LayoutCrud />
               </RequireAuth>
             }
           >

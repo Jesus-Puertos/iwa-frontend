@@ -20,7 +20,7 @@ const NAV = [
   { to: '/usuarios',   label: 'Usuarios',   icon: Users,   roles: ['ADMIN'] as Role[] },
 ];
 
-export default function IntranetPageLayout() {
+export default function LayoutCrud() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -47,24 +47,21 @@ export default function IntranetPageLayout() {
   return (
     <div className="min-h-screen bg-[#f0f2f5]">
 
-      {/* Header */}
       <header className="sticky top-0 z-30 border-b border-orange-100 bg-white shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
 
-          {/* Brand */}
           <div className="flex items-center gap-3">
-            <img src="/assets/logos/escudo.webp" alt="" aria-hidden="true" className="h-9 w-9 object-contain" />
+            <img src="/imagotipo.png" alt="" aria-hidden="true" className="h-32 w-32 object-contain" />
             <div className="hidden sm:block">
               <p className="text-[9px] font-black uppercase tracking-[0.35em] text-slate-400">
-                H. Ayuntamiento de Zongolica
+              IWA HACKATHON 2026
               </p>
               <p className="text-[11px] font-black uppercase tracking-[0.18em] text-slate-700">
-                Intranet Municipal
+              CRUD DE GESTION DE INVENTARIOS
               </p>
             </div>
           </div>
 
-          {/* Navegación por rol (desktop) */}
           <nav className="hidden items-center gap-1 md:flex">
             {visibleNav.map(({ to, label, icon: Icon }) => (
               <NavLink
@@ -83,7 +80,6 @@ export default function IntranetPageLayout() {
             ))}
           </nav>
 
-          {/* Profile pill dropdown */}
           <div ref={menuRef} className="relative">
             <button
               type="button"
