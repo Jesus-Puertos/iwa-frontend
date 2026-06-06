@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
-import { useAuth } from '../Auth/AuthContext';
-import { login as loginRequest } from '../Auth/AuthApi';
+import { useAuth } from '../auth/AuthContext';
+import { login as loginRequest } from '../auth/authApi';
 import { ApiError } from '../api/client';
 
 const ESCUDO_URL = '/assets/logos/escudo.webp';

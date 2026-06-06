@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { LogOut, CircleUser, ChevronDown, Package, Boxes, Users } from 'lucide-react';
-import { useAuth, type Role } from '../Auth/AuthContext';
+import { useAuth, type Role } from '../auth/AuthContext';
 
 function initials(name: string) {
   return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './Auth/AuthContext';
+import { AuthProvider, useAuth } from './auth/AuthContext';
 import IntranetPageLayout from './components/LayoutCrud';
 
 // Guard: si no hay sesión, manda a login
